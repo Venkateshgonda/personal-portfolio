@@ -1,0 +1,193 @@
+body {
+    font-family: 'Arial', sans-serif; 
+    background-color: rgb(129, 98, 90) ;
+  }
+
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas:
+    "nav nav nav nav"
+    "sidebar1 header header header"
+    "sidebar2 content1 content2 content3"
+    "sidebar3 footer footer footer";
+    grid-gap:0.8rem;
+    font-family: 'Noto Serif', serif;
+    font-weight: 800;
+    font-size: 1EM;
+    color: #fff;  
+}
+nav {
+    background: rgb(22, 212, 152);
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding: 4px;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    align-items: center; 
+}
+ .Sname{
+    color: blue;
+ }
+nav a {
+    text-decoration: none;
+    padding: 9px 16px;
+    font-size: large;
+}
+#sidebar1{
+    background:rgb(22, 212, 152) ;
+    grid-area: sidebar1;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    color:black;
+    align-items: center;
+}
+
+header{
+    background:rgb(22, 212, 152) ;
+    grid-area: header;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+header p{
+    font-size:larger;
+    color: brown;
+    text-align:left;
+}
+header h2{
+    text-decoration:underline;
+    text-align: center;
+    font-size: x-large;
+    
+}
+#sidebar2 {
+    grid-area: sidebar2;
+    background: rgb(22, 212, 152);
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+#content1 {
+    grid-area:content1 ;
+    background: rgb(22, 212, 152) ;
+    border-radius: 5px;
+    padding: 5px;
+}
+#content1 p{
+    text-align: center;
+    color: black;
+}
+#content1 ul{
+    color: brown;
+}
+#content2 {
+    grid-area:content2 ;
+    background: rgb(22, 212, 152) ;
+    border-radius: 5px;
+    padding: 5px;
+}
+#content2 p{
+    text-align: center;
+    color: black;
+}
+#content2 ul{
+    color: brown;
+}
+
+#content3 {
+    grid-area:content3 ;
+    background: rgb(22, 212, 152) ;
+    border-radius: 5px;
+    padding: 5px;
+}
+#content3 p{
+    text-align: center;
+    color: black;
+}
+#content3 ul{
+    color: brown;
+}
+#sidebar3 {
+    grid-area: sidebar3;
+    background: rgb(22, 212, 152);
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+footer {
+    grid-area: footer;
+    background: rgb(22, 212, 152);
+    border-radius: 5px;
+    padding: 5px;
+    color: brown;
+}
+
+footer form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; 
+    align-items: center; 
+}
+.inputs {
+    display: flex;
+    flex-direction: column; 
+    margin-right: 10px;
+}
+
+.inputs label {
+    margin-bottom: 5px; 
+}
+
+.inputs input,
+.inputs textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+footer button {
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 50px;
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1.2fr;
+        justify-content: space-evenly;
+        grid-template-areas:
+        "nav"
+        "header"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+        row-gap: 0.5rem;
+    }
+
+    #sidebar1, #sidebar2, #sidebar3 {
+        display: none;
+    }
+
+    footer form {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+
+    .inputs, footer button {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+}
